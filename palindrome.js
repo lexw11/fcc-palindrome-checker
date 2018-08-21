@@ -1,17 +1,27 @@
 function palindrome(str) {
     var regex = /[^_\W]/;
-    
+
     // Turn all letters to lower case
-    return str.toLowerCase()
+    var arr = str.toLowerCase()
+    		// Split string into array of single characters
     		.split('')
     		// Remove all non-alphanumeric characters
-    		.filter(char => regex.test(char))
-    		.join("");
+    		.filter(char => regex.test(char));
+    		
+	if( arr.length % 2 === 0 ) {
+		// If string length is even, get half length
+		var half = arr.length / 2;
+	} else {
+		// If string length is odd, define halfway as length - 1
+		var half = (arr.length - 1) / 2;
+	}
+	var arr1 = arr.slice( 0, half );
+	var arr2 = arr.slice( -1 * half );
 	
-	// Find length  of string and divide in 2
 	// Flip second half
 	// If half 2 === half 1, it's a palindrome
 	// return true;
+	return arr.join("");
 }
 
 
