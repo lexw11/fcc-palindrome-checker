@@ -1,10 +1,13 @@
 function palindrome(str) {
-    // Remove all non-alphanumeric characters
     var regex = /[^_\W]/;
-    return str.split('')
+    
+    // Turn all letters to lower case
+    return str.toLowerCase()
+    		.split('')
+    		// Remove all non-alphanumeric characters
     		.filter(char => regex.test(char))
     		.join("");
-	// Turn all letters to lower case
+	
 	// Find length  of string and divide in 2
 	// Flip second half
 	// If half 2 === half 1, it's a palindrome
