@@ -7,22 +7,29 @@ function palindrome(str) {
     		.split('')
     		// Remove all non-alphanumeric characters
     		.filter(char => regex.test(char));
-    		
-	if( arr.length % 2 === 0 ) {
-		// If string length is even, get half length
-		var half = arr.length / 2;
-	} else {
-		// If string length is odd, define halfway as length - 1
-		var half = (arr.length - 1) / 2;
-	}
+	
+    var half = getHalfWay( arr );
+
 	var arr1 = arr.slice( 0, half );
 	// Flip second half
 	var arr2 = arr.slice( -1 * half ).reverse();
 
-	return areEqual(arr1, arr2);
+	return areEqual( arr1, arr2 );
+
+	// Get the halfway point of an array
+	function getHalfWay( arr ) {
+		let len = arr.length;
+		if( len % 2 === 0 ) {
+			// If string length is even, get half length
+			return len / 2;
+		} else {
+			// If string length is odd, define halfway as length - 1
+			return (len - 1) / 2;
+		}
+	}
 
 	// Check if two arrays are equal
-	function areEqual(arr1, arr2) {
+	function areEqual( arr1, arr2 ) {
 		for( var i = 0; i < arr1.length; i++ ) {
 			if( arr1[i] !== arr2[i] ) {
 				// If any characters aren't equal, it's not a palindrome
@@ -36,11 +43,11 @@ function palindrome(str) {
 
 
 
-// var output = palindrome("eye");
+var output = palindrome("eye");
 var output2 = palindrome("A man, a plan, a canal. Panama");
-// var output3 = palindrome("My age is 0, 0 si ega ym.");
-// var output4 = palindrome("0_0 (: /-\ :) 0-0");
-// console.log(output);
+var output3 = palindrome("My age is 0, 0 si ega ym.");
+var output4 = palindrome("0_0 (: /-\ :) 0-0");
+console.log(output);
 console.log(output2);
-// console.log(output3);
-// console.log(output4);
+console.log(output3);
+console.log(output4);
