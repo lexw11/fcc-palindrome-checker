@@ -18,22 +18,29 @@ function palindrome(str) {
 	var arr1 = arr.slice( 0, half );
 	// Flip second half
 	var arr2 = arr.slice( -1 * half ).reverse();
-	
-	return [arr1, arr2];
 
-	
-	// If half 2 === half 1, it's a palindrome
-	// return true;
-	// return arr.join("");
+	return areEqual(arr1, arr2);
+
+	// Check if two arrays are equal
+	function areEqual(arr1, arr2) {
+		for( var i = 0; i < arr1.length; i++ ) {
+			if( arr1[i] !== arr2[i] ) {
+				// If any characters aren't equal, it's not a palindrome
+				return false;
+			}
+		}
+		// If all characters match, it's a palindrome
+		return true;
+	}
 }
 
 
 
-var output = palindrome("eye");
+// var output = palindrome("eye");
 var output2 = palindrome("A man, a plan, a canal. Panama");
-var output3 = palindrome("My age is 0, 0 si ega ym.");
-var output4 = palindrome("0_0 (: /-\ :) 0-0");
-console.log(output);
+// var output3 = palindrome("My age is 0, 0 si ega ym.");
+// var output4 = palindrome("0_0 (: /-\ :) 0-0");
+// console.log(output);
 console.log(output2);
-console.log(output3);
-console.log(output4);
+// console.log(output3);
+// console.log(output4);
