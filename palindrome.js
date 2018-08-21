@@ -16,12 +16,15 @@ function palindrome(str) {
 		var half = (arr.length - 1) / 2;
 	}
 	var arr1 = arr.slice( 0, half );
-	var arr2 = arr.slice( -1 * half );
-	
 	// Flip second half
+	var arr2 = arr.slice( -1 * half ).reverse();
+	
+	return [arr1, arr2];
+
+	
 	// If half 2 === half 1, it's a palindrome
 	// return true;
-	return arr.join("");
+	// return arr.join("");
 }
 
 
