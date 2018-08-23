@@ -4,10 +4,15 @@ var input = document.querySelector( 'input' ),
 	feedback = document.querySelector( '#feedback' );
 
 // Add event listeners
-button.addEventListener( 'click', function(){
+button.addEventListener( 'click', function() {
 	checkInput( input.value );
 });
-input.addEventListener()
+
+input.addEventListener( 'keypress', function(event) {
+	if( event.key === 'Enter' ) {
+		checkInput( this.value );
+	}
+});
 
 // Functions
 function checkInput( str ) {
