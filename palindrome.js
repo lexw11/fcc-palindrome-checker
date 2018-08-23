@@ -1,3 +1,24 @@
+// Query HTML objects
+var input = document.querySelector( 'input' ),
+	button = document.querySelector( 'button' ),
+	feedback = document.querySelector( '#feedback' );
+
+// Add event listeners
+button.addEventListener( 'click', function(){
+	checkInput( input.value );
+});
+input.addEventListener()
+
+// Functions
+function checkInput( str ) {
+	var check = palindrome( str );
+	if( check ) {
+		feedback.textContent = "You bet! That's a palindrome!"
+	} else {
+		feedback.textContent = "Nope, not a palindrome."
+	}
+}
+
 function palindrome(str) {
     var regex = /[^_\W]/;
 
@@ -40,14 +61,3 @@ function palindrome(str) {
 		return true;
 	}
 }
-
-
-
-var output = palindrome("eye");
-var output2 = palindrome("A man, a plan, a canal. Panama");
-var output3 = palindrome("My age is 0, 0 si ega ym.");
-var output4 = palindrome("0_0 (: /-\ :) 0-0");
-console.log(output);
-console.log(output2);
-console.log(output3);
-console.log(output4);
