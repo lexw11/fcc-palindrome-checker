@@ -1,0 +1,27 @@
+.container-fluid > .row {
+	height: 100vh;
+	text-align: center;
+}
+
+.form-row {
+	max-width: 600px;
+	margin: auto;
+}
+
+/*html {
+	font-size: 16px;
+}
+
+body {
+	font-size: 1em;
+}
+
+.container {
+	text-align: center;
+	margin-top: 25vh;
+}
+
+.form-control {
+	max-width: 400px;
+	margin: auto;
+}*/
