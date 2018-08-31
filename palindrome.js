@@ -1,9 +1,19 @@
+// Palindrome Checker
+
+// Takes a string as an input and assesses letter and number 
+// characters (ignoring punctuation) to determine if string
+// is a palindrome.
+
+// =====================
 // Query HTML objects
+// =====================
 var input = document.querySelector( 'input' ),
 	button = document.querySelector( 'button' ),
 	feedback = document.querySelector( '#feedback' );
 
+// =====================
 // Add event listeners
+// =====================
 button.addEventListener( 'click', function() {
 	checkInput( input.value );
 });
@@ -14,7 +24,9 @@ input.addEventListener( 'keypress', function(event) {
 	}
 });
 
+// =====================
 // Functions
+// =====================
 function checkInput( str ) {
 	var check = palindrome( str );
 	if( check ) {
